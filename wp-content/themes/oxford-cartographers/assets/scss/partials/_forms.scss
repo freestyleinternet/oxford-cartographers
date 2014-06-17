@@ -1,0 +1,153 @@
+/* FORMS */
+main fieldset  {
+	position:relative;
+	float:left;
+	width:100%;
+	margin-bottom:em(9);
+	@include bp(tablet) {
+		width:49%;
+		margin-right:2%;
+		&:nth-of-type(even) {
+			margin-right:0;
+		}
+	}
+}
+label {
+	color:#fff;
+	display:block;
+	font-size:em(14);
+	margin-bottom:em(2);
+}
+input, textarea {
+	width:100%;
+	display:block;
+	font-size:em(14);
+	padding:em(3) em(5);
+	border-radius:em(10);
+	border:1px solid #000;
+	margin-bottom:em(5);
+}
+
+input[type=submit] {
+	padding-top:em(3);
+	padding-bottom:em(3);
+	border-radius:0;
+	border:none;
+	margin-top:em(9);
+}
+body .gform_wrapper .gform_body .gform_fields .gfield textarea,
+textarea {
+	height:112px;
+	
+}
+body .gform_wrapper .gform_footer input[type=submit] {
+	width:100%;
+	display:inline-block;
+	color:#000;
+	font-weight:700;
+	font-size:em(14);
+	padding:em(3) em(35) em(3) em(12);
+	font-size:em(16);
+	background:$brand-second url(#{$assetPath}/button-right-arrow.svg) no-repeat 91% center;
+	@include bp(desktop) {
+		width:25%;	
+	}
+}
+#mailinglist {
+	margin-top:em(13);
+	label {
+		color:#000;
+		margin-bottom:em(5);
+	}
+}
+.search-form {
+	float:right;
+	position:relative;
+	@include bp(tablet) {
+		top:em(-30);
+	}
+	@include bp(desktop) {
+		top:em(-39);
+	}
+	input {
+		color:#000;
+		padding:em(5) em(5) em(3) em(5);
+		font-weight:700;
+	}
+	@include bp(tablet) {
+		width:33.54838709677419%; /*  208/620 */
+	}
+}
+
+/* Newsletter signup message box */
+.thankyou {
+	width:96%;
+	border:2px solid $brand-dark;
+	padding:20px 2%;
+	background:rgba(0,174,239,0.3);
+	margin-bottom:em(20);
+	margin-top:em(11);
+	font-size:em(14);
+	p {
+		color:$brand-dark;
+	}
+}
+.errormsg {
+	color:$red;
+	width:96%;
+	border:2px solid $red;
+	padding:20px 2%;
+	background:rgba(199,45,58,0.3);
+	margin-bottom:em(20);
+	margin-top:em(11);
+	font-size:em(14);
+	a {
+		color:$red;
+		&:hover {
+			color:$red;
+			text-decoration:underline;
+		}
+	}
+}
+
+.signup .thankyou {
+	width:96%;
+	border:none;
+	padding:20px 2%;
+	background:none;
+	margin-bottom:em(20);
+	margin-top:em(11);
+	font-size:em(14);
+	p {
+		color:#fff;
+	}
+}
+.signup .errormsg {
+	color:$red;
+	width:96%;
+	border:none;
+	padding:20px 2%;
+	background:none;
+	margin-bottom:em(20);
+	margin-top:em(11);
+	font-size:em(14);
+	a {
+		color:$red;
+		&:hover {
+			color:$red;
+			text-decoration:underline;
+		}
+	}
+}
+
+/* Gravity Forms */
+
+.gform_wrapper { }
+.gform_heading { }
+.gform_description { }
+.gform_body { }
+.gform_fields { }
+.gfield { }
+.ginput_container { }
+.gform_footer { }
+.gform_button { }

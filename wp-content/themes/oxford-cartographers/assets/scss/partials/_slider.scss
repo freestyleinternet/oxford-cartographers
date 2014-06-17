@@ -1,0 +1,216 @@
+.slider-container {
+	position:relative;
+	width:100%;
+	display:inline-block;
+}
+.cycle-slideshow {
+	position:relative;
+	top:6px;
+	width:100%;
+	float:left;
+	margin-left:auto;
+	margin-right:auto;
+}
+.cycle-slideshow.casestudypage {
+	top:0;
+	margin-top:0;
+}
+.cycle-slideshow.subpage {
+	top:0;
+	margin-top:em(9);
+}
+.slide {
+	width:100%;
+	display:inline-block;
+	min-height:365px;
+	@include bp(tablet) {
+		width:100%;
+		min-height:365px;
+	}
+	img {
+		float:right;
+		width:100%;
+		@include bp(tablet) {
+			width:50%;
+		}
+	}
+	.text {
+		float:left;
+		width:100%;
+		padding-top:em(29);
+		@include bp(tablet) {
+			width:50%;
+		}
+	}
+}
+.text {
+	h1 {
+		font-size:em(27);
+		line-height:29px;
+		font-weight:700;
+		color:#fff;
+		text-align:center;
+		text-transform:uppercase;
+		margin-bottom:em(14);
+		@include bp(tablet) {
+			text-align:left;
+			font-size:em(37);
+			line-height:39px;
+		}
+	}
+	p {
+		color:#fff;
+		margin-top:0;
+	}
+}
+.slide-full {
+	width:100%;
+	float:left;
+	@include bp(tablet) {
+		width:100%;
+		min-height:none;
+	}
+	.text {
+		position:absolute;
+		top:em(10);
+		left:em(12);
+		width:90%;
+		@include bp(tablet) {
+			top:em(55);
+			width:48%;
+		}
+		@include bp(desktop) {
+			top:em(42);
+			width:40%;
+		}
+		h1 {
+			font-size:em(16);
+			line-height:22px;
+			@include bp(tablet) {
+				text-align:left;
+				font-size:em(37);
+				line-height:39px;
+			}
+		}
+	}
+}
+#next,
+#prev {
+	display:none;
+	visibility:hidden;
+	@include bp(desktop) {
+		position:absolute;
+		top:75%;	
+		width:44px;
+		height:36px;
+		margin-top:em(-18);
+		display:block;
+		cursor:pointer;
+		z-index:2000;
+		opacity:0.8;
+		visibility:visible;	
+	}
+}
+#next {
+	right:0;
+	background:url(#{$assetPath}/slider-right-arrow.svg) no-repeat center center;
+}
+#prev {	
+	left:0;
+	background: url(#{$assetPath}/slider-left-arrow.svg) no-repeat center center;
+}
+
+.inner #next {
+	right:em(12);
+}
+.inner #prev {
+	left:em(12);
+}
+
+.slider-container .cycle-pager {
+	position:absolute;
+	bottom:em(20);
+	left:0;
+	z-index:200;
+	display:none;
+	visibility:hidden;
+	@include bp(desktop) {
+		display:block;
+		visibility:visible;
+	}
+	span {
+		display: block;
+		float: left;
+		width: 15px;
+		height: 15px;
+		text-indent: -999em;
+		background:#fff;
+		margin-right: 10px;
+		cursor:pointer;
+		&.cycle-pager-active,
+		&:hover {
+			background:$brand-second;
+		}
+	}
+}
+
+.subpage .cycle-pager {
+	position:absolute;
+	left:em(12);
+	bottom:em(22);
+	width:100%;
+	text-align:center;
+	z-index:200;
+	display:none;
+	visibility:hidden;
+	@include bp(tablet) {
+		display:block;
+		visibility:visible;
+	}
+	span {
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		background:#fff;
+		text-indent:-9999px;
+		margin-right: 10px;
+		cursor:pointer;
+		&.cycle-pager-active,
+		&:hover {
+			background:$brand-second;
+		}
+	}
+}
+
+.casestudypage .cycle-pager {
+	left:em(12);
+}
+
+/* Service Slider */
+.cycle-prev,
+.cycle-next {
+	width:36px;
+	height:30px;
+	margin-top:em(-15);
+	filter: alpha(opacity=50);
+	@include transition (opacity 0.5s ease-in-out);
+	cursor:pointer;
+	z-index:200;
+}
+.cycle-prev {
+	position:absolute;
+	top:50%;
+	left:0;
+	background:$brand-second url(#{$assetPath}/arrow-left.svg) no-repeat center center;
+}
+.cycle-next {
+	position:absolute;
+	top:50%;
+	right:0;
+	background:$brand-second url(#{$assetPath}/arrow-right.svg) no-repeat center center;
+}
+
+
+
+
+
